@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
+
+class MIGRATION_CLASS_PLACEHOLDER extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up(): void
+    {
+        Schema::create('TABLE_NAME_PLACEHOLDER', static function (Blueprint $table) {
+            $table->id();
+            MIGRATION_COLUMNS_PLACEHOLDER
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down(): void
+    {
+        Schema::drop('TABLE_NAME_PLACEHOLDER');
+    }
+}

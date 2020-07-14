@@ -11,11 +11,28 @@
     },
     "devDependencies": {
         "axios": "^0.19",
+        "bootstrap": "^4.0.0",
+        "browser-sync": "^2.26.7",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^7.0",
+        "jquery": "^3.5.1",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
+        "popper.js": "^1.12",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "@sweetalert2/theme-bootstrap-4": "^3.1.4",
+        "admin-lte": "^3.0.2",
+        "choices.js": "^9.0.1",
+        "conditionize2": "^2.0.1",
+        "eventslibjs": "^1.2.0",
+        "flatpickr": "^4.6.3",
+        "litepicker": "^1.4.6",
+        "pretty-checkbox": "^3.0.3",
+        "sweetalert2": "^9.10.9"
     }
 }

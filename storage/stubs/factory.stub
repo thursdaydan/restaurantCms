@@ -1,0 +1,14 @@
+<?php
+
+/** @var Factory $factory */
+
+use App\MODELNAME;
+use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Str;
+
+$factory->define(MODELNAME::class, static function (Faker $faker) {
+    return [
+        ATTRIBUTES
+    ];
+});

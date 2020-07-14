@@ -1,0 +1,101 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\MyModelClass;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+class MyModelClassController extends Controller
+{
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @param  Request  $request
+     * @return Factory|View
+     */
+    public function index(Request $request)
+    {
+        $MyModelLower = MyModelUpper::filter($request)->paginate();
+
+        return view('web.backend.sections.MyModelLowerSingular.index')->with('MyModelLower', $MyModelLower);
+    }
+
+    /**
+     * Display the form to create a new MyModelClass.
+     */
+    public function create(): View
+    {
+         return view('web.backend.sections.MyModelLowerSingular.create');
+    }
+
+    /**
+     * Store a new MyModelClass.
+     *
+     * @param Request $request
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:users',
+        ]);
+
+        MyModelUpper::create([$request->all()]);
+
+        flash('The new MyModelUpper was created successfully.')->success();
+
+        return redirect()->route('MyModelLower.index');
+    }
+
+    /**
+     * Display the form to edit an existing MyModelClass instance.
+     *
+     * @param MyModelUpper $MyModelLower
+     * @return RedirectResponse|View
+     */
+    public function edit(MyModelUpper $MyModelLower)
+    {
+        return view('web.backend.sections.MyModelLowerSingular.edit')->with('myModelLower', $MyModelLower);
+    }
+
+    /**
+     * Update an existing MyModelClass instance.
+     *
+     * @param  Request  $request
+     * @param  MyModelUpper  $MyModelLower
+     * @return RedirectResponse
+     */
+    public function update(Request $request, MyModelUpper $MyModelLower)
+    {
+        $request->validate(['name' => 'required']);
+
+        $MyModelLower->update($request->all());
+
+        flash('The MyModelUpper was updated successfully.')->success();
+
+        return redirect()->route('MyModelUpper.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  MyModelUpper  $MyModelLower
+     * @return bool|null
+     * @throws \Exception
+     */
+    public function destroy(MyModelUpper $MyModelLower): ?bool
+    {
+        return $MyModelLower->delete();
+    }
+}

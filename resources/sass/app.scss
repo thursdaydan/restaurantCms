@@ -1,1 +1,49 @@
-//
+// Variables
+@import 'variables';
+
+@import '~admin-lte/dist/css/adminlte.css';
+@import '~@sweetalert2/theme-bootstrap-4/bootstrap-4.scss';
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
+.icon {
+    fill: currentColor;
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+.icon-sm {
+    font-size: .875em;
+}
+
+.text-transparent {
+    color: transparent;
+}
+
+.empty-table {
+    text-align: center;
+    font-style: italic;
+}
+
+.index-card nav {
+    display: inline-block;
+
+    .pagination {
+        margin: 0;
+    }
+}
+
+html, body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.action-dropdown::after {
+    border: none;
+}
+
+.required {
+    font-weight: 800;
+    color: $red;
+}

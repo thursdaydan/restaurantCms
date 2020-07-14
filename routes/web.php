@@ -1,18 +1,28 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', 'HomeController@root');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// User Routes
+Route::resource('users', 'UserController')->except(['show']);
+
+// Menu Routes
+Route::resource('menus/categories', 'MenuCategoryController')->except(['show']);
+Route::resource('menus/items', 'MenuItemController')->except(['show']);
+Route::resource('menus/types', 'MenuTypeController')->except(['show']);
+
+Route::post('menus/restore/{id}', 'MenuController@restore')->name('menus.restore');
+Route::resource('menus', 'MenuController');
+
+
+// Page Routes
+Route::resource('pages', 'PageController')->except(['show']);
+
+// Snippet Routes
+Route::resource('snippets', 'SnippetController')->except(['show']);
