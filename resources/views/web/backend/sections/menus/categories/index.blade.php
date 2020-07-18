@@ -73,11 +73,11 @@
 
                                 <div class="col-12 col-md-3">
                                     <div class="form-group">
-                                        <label for="menu_id">Category</label>
+                                        <label for="menu_id">Menu</label>
                                         <select class="form-control" id="menu_id" name="menu_id">
                                             <option value="">Please select a Category</option>
                                             @foreach($menus as $menu)
-                                                <option value="{{ $menu->id }}" {{ old('type_id', request('type_id')) == $menu->id ? 'selected' : null }}>{{ $menu->name }}</option>
+                                                <option value="{{ $menu->id }}" {{ old('menu_id', request('menu_id')) == $menu->id ? 'selected' : null }}>{{ $menu->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -119,7 +119,7 @@
                                 <tr>
                                     <th>@lang('sections/categories.fields.name')</th>
                                     <th>@lang('sections/categories.fields.status')</th>
-                                    <th>@lang('sections/categories.fields.type')</th>
+                                    <th>@lang('sections/categories.fields.menu')</th>
                                     <th>@lang('sections/categories.fields.publish_at')</th>
                                     <th>@lang('sections/categories.fields.author')</th>
                                     <th>@lang('sections/categories.fields.created_at')</th>

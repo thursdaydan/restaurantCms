@@ -6,7 +6,7 @@ return [
     'fields' => [
         'name' => 'Name',
         'status' => 'Status',
-        'type' => 'Type',
+        'menu' => 'Menu',
         'publish_at' => 'Publish Date',
         'author' =>'Created By',
         'created_at' => 'Created At'

@@ -75,7 +75,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="publish_at">Publish At</label>
-                                    <input type="date" class="form-control" id="publish_at" name="publish_at" value="{{ old('publish_at' $category->publish_at) }}" placeholder="Publish Date">
+                                    <input type="date" class="form-control" id="publish_at" name="publish_at" value="{{ old('publish_at', $category->publish_at) }}" placeholder="Publish Date">
                                 </div>
                             </div>
                         </div>

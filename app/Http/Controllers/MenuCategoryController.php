@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\MenuCategory;
@@ -26,18 +25,19 @@ class MenuCategoryController extends Controller
 
     /**
      * Display a listing of the resource.
+     *
      * @param  Request  $request
+     *
      * @return Factory|View
      */
     public function index(Request $request)
     {
-        $statuses = MenuStatus::all('id', 'name');
-        $menus = Menu::all('id', 'name');
-        $users = User::all('id', 'name');
+        $statuses       = MenuStatus::all('id', 'name');
+        $menus          = Menu::all('id', 'name');
+        $users          = User::all('id', 'name');
         $menuCategories = MenuCategory::filter($request)->paginate();
 
-        return view('web.backend.sections.menus.categories.index')
-            ->with(compact('statuses', 'menus', 'users', 'menuCategories'));
+        return view('web.backend.sections.menus.categories.index')->with(compact('statuses', 'menus', 'users', 'menuCategories'));
     }
 
     /**
@@ -45,37 +45,37 @@ class MenuCategoryController extends Controller
      */
     public function create(): View
     {
-        $menus = Menu::all('id', 'name');
-        $statuses = MenuStatus::all('id', 'name');
+        $menus        = Menu::all('id', 'name');
+        $statuses     = MenuStatus::all('id', 'name');
         $defaultOrder = MenuCategory::count() + 1;
 
-        return view('web.backend.sections.menus.categories.create')
-            ->with(compact('menus', 'statuses', 'defaultOrder'));
+        return view('web.backend.sections.menus.categories.create')->with(compact('menus', 'statuses', 'defaultOrder'));
     }
 
     /**
      * Store a new Menu.
      *
-     * @param Request $request
+     * @param  Request  $request
+     *
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => 'required|string',
+            'name'        => 'required|string',
             'description' => 'string',
-            'status_id' => 'required|integer',
-            'menu_id' => 'required|integer',
-            'publish_at' => 'nullable|string'
+            'status_id'   => 'required|integer',
+            'menu_id'     => 'required|integer',
+            'publish_at'  => 'nullable|string',
         ]);
 
         MenuCategory::create([
-            'name' => $request->name,
+            'name'        => $request->name,
             'description' => $request->description,
-            'status_id' => $request->status_id,
-            'menu_id' => $request->menu_id,
-            'publish_at' => $request->publish_at,
-            'author_id' => auth()->user()->id
+            'status_id'   => $request->status_id,
+            'menu_id'     => $request->menu_id,
+            'publish_at'  => $request->publish_at,
+            'author_id'   => auth()->user()->id,
         ]);
 
         flash('The new Category was created successfully.')->success();
@@ -86,41 +86,42 @@ class MenuCategoryController extends Controller
     /**
      * Display the form to edit an existing Menu instance.
      *
-     * @param MenuCategory $menuCategory
+     * @param  MenuCategory  $category
+     *
      * @return RedirectResponse|View
      */
-    public function edit(MenuCategory $menuCategory)
+    public function edit(MenuCategory $category)
     {
-        $menus = Menu::all('id', 'name');
+        $menus    = Menu::all('id', 'name');
         $statuses = MenuStatus::all('id', 'name');
 
-        return view('web.backend.sections.menus.categories.edit')
-            ->with(compact('menus', 'statuses', 'menuCategory'));
+        return view('web.backend.sections.menus.categories.edit')->with(compact('menus', 'statuses', 'category'));
     }
 
     /**
      * Update an existing Menu instance.
      *
-     * @param  Request  $request
-     * @param  MenuCategory  $menuCategory
+     * @param  Request       $request
+     * @param  MenuCategory  $category
+     *
      * @return RedirectResponse
      */
-    public function update(Request $request, MenuCategory $menuCategory)
+    public function update(Request $request, MenuCategory $category)
     {
         $request->validate([
-            'name' => 'required|string',
+            'name'        => 'required|string',
             'description' => 'string',
-            'status_id' => 'required|integer',
-            'menu_id' => 'required|integer',
-            'publish_at' => 'nullable|string'
+            'status_id'   => 'required|integer',
+            'menu_id'     => 'required|integer',
+            'publish_at'  => 'nullable|string',
         ]);
 
-        $menuCategory->update([
-            'name' => $request->name,
+        $category->update([
+            'name'        => $request->name,
             'description' => $request->description,
-            'status_id' => $request->status_id,
-            'menu_id' => $request->menu_id,
-            'publish_at' => $request->publish_at
+            'status_id'   => $request->status_id,
+            'menu_id'     => $request->menu_id,
+            'publish_at'  => $request->publish_at,
         ]);
 
         flash('The Category was updated successfully.')->success();
@@ -131,12 +132,13 @@ class MenuCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  MenuCategory  $menuCategory
+     * @param  MenuCategory  $category
+     *
      * @return bool|null
      * @throws \Exception
      */
-    public function destroy(MenuCategory $menuCategory): ?bool
+    public function destroy(MenuCategory $category): ?bool
     {
-        return $menuCategory->delete();
+        return $category->delete();
     }
 }
