@@ -14,6 +14,7 @@
             <div class="col-12">
                 <form role="form" method="POST" action="{{ route('categories.update', $category->id) }}">
                     @csrf
+                    @method('PATCH')
 
                     <div class="card">
                         <div class="card-header">
