@@ -86,10 +86,10 @@
                                 <tr data-id="{{ $user->id }}" data-delete-url="{{ route('users.destroy', $user->id) }}" data-section="{{ Str::singular(__('sections/users.title')) }}">
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at->format('j F, Y') }}</td>
+                                    <td>{{ $user->created_at ? $user->created_at->format('j F, Y') : null }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning" title="Edit">@svg('regular/edit')</a>
+                                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary" title="Edit">@svg('regular/edit')</a>
                                             <button type="button" class="btn btn-sm btn-danger btn-delete" title="Delete">@svg('regular/trash')</button>
                                         </div>
                                     </td>

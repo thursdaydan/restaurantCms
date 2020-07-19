@@ -32,7 +32,6 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = User::filter($request)->paginate();
-
         return view('web.backend.sections.users.index')->with('users', $users);
     }
 

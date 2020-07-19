@@ -109,10 +109,6 @@
                     </div>
                 </form>
 
-                <svg class="icon" id="settings-icon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zondicon-cog"></use>
-                </svg>
-
                 <div class="card index-card">
                     <div class="card-header">
                         <h3 class="card-title">@lang('sections/menus.sub_title')</h3>
@@ -140,12 +136,7 @@
                                 @forelse ($menus as $menu)
                                     <tr data-id="{{ $menu->id }}" data-delete-url="{{ route('menus.destroy', $menu->id) }}" data-restore-url="{{ route('menus.restore', $menu->id) }}" data-section="{{ Str::singular(__('sections/menus.title')) }}">
                                         <td>
-                                            @if (! $menu->trashed())
-                                                @svg('solid/circle', 'icon-sm text-transparent')
-                                            @else
-                                                @svg('solid/circle', 'icon-sm text-red')
-                                            @endif
-
+                                            {{ ! $menu->trashed() ? svg('solid/circle', 'icon-sm text-transparent') : svg('solid/circle', 'icon-sm text-red') }}
                                             {{ $menu->name }}
                                         </td>
                                         <td><span class="badge" style="color: {{ $menu->status->text_colour }}; background: {{ $menu->status->background_colour }}">{{ $menu->status->name }}</span></td>

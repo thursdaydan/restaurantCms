@@ -62,7 +62,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/spatie/eloquent-sortable" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/nothingworks/blade-svg" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
@@ -123,6 +122,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/health" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/yaml" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/blade-ui-kit/blade-icons" />
     </include_path>
   </component>
   <component name="PhpProjectServersManager">
@@ -130,7 +132,7 @@
       <server host="restaurantcms.localhost" id="fc56f541-3f3d-40b6-8811-c5360a65d0dc" name="Localhost" port="9000" use_path_mappings="true" />
     </servers>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
   <component name="PhpRuntimeConfiguration">
     <extensions>
       <extension name="Ev" enabled="false" />

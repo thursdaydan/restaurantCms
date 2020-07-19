@@ -3,6 +3,7 @@
 return [
     'title' => 'Categories',
     'actions' => 'Actions',
+    'archived'  => 'Archived',
     'fields' => [
         'name' => 'Name',
         'status' => 'Status',

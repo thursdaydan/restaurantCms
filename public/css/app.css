@@ -30010,7 +30010,253 @@ a.text-muted:hover {
 [class*="accent-"] a.btn-dark {
   color: #ffffff;
 }
-/*# sourceMappingURL=adminlte.css.map */@-webkit-keyframes fadeInDown {
+/*# sourceMappingURL=adminlte.css.map *//* Material Colours
+   https://www.materialpalette.com/colors */
+
+/* Material Colours
+   https://www.materialpalette.com/colors */
+
+.red__background__50 {
+  background: #ffebee;
+}
+
+.red__background__100 {
+  background: #ffcdd2;
+}
+
+.red__background__200 {
+  background: #ef9a9a;
+}
+
+.red__background__300 {
+  background: #e57373;
+}
+
+.red__background__400 {
+  background: #ef5350;
+}
+
+.red__background__500 {
+  background: #f44336;
+}
+
+.red__background__600 {
+  background: #e53935;
+}
+
+.red__background__700 {
+  background: #d32f2f;
+}
+
+.red__background__800 {
+  background: #c62828;
+}
+
+.red__background__900 {
+  background: #b71c1c;
+}
+
+.red__colour__50 {
+  color: #ffebee;
+}
+
+.red__colour__100 {
+  color: #ffcdd2;
+}
+
+.red__colour__200 {
+  color: #ef9a9a;
+}
+
+.red__colour__300 {
+  color: #e57373;
+}
+
+.red__colour__400 {
+  color: #ef5350;
+}
+
+.red__colour__500 {
+  color: #f44336;
+}
+
+.red__colour__600 {
+  color: #e53935;
+}
+
+.red__colour__700 {
+  color: #d32f2f;
+}
+
+.red__colour__800 {
+  color: #c62828;
+}
+
+.red__colour__900 {
+  color: #b71c1c;
+}
+
+.blue__background__50 {
+  background: #e3f2fd;
+}
+
+.blue__background__100 {
+  background: #bbdefb;
+}
+
+.blue__background__200 {
+  background: #90caf9;
+}
+
+.blue__background__300 {
+  background: #64b5f6;
+}
+
+.blue__background__400 {
+  background: #42a5f5;
+}
+
+.blue__background__500 {
+  background: #2196f3;
+}
+
+.blue__background__600 {
+  background: #1e88e5;
+}
+
+.blue__background__700 {
+  background: #1976d2;
+}
+
+.blue__background__800 {
+  background: #1565c0;
+}
+
+.blue__background__900 {
+  background: #0d47a1;
+}
+
+.blue__colour__50 {
+  color: #e3f2fd;
+}
+
+.blue__colour__100 {
+  color: #bbdefb;
+}
+
+.blue__colour__200 {
+  color: #90caf9;
+}
+
+.blue__colour__300 {
+  color: #64b5f6;
+}
+
+.blue__colour__400 {
+  color: #42a5f5;
+}
+
+.blue__colour__500 {
+  color: #2196f3;
+}
+
+.blue__colour__600 {
+  color: #1e88e5;
+}
+
+.blue__colour__700 {
+  color: #1976d2;
+}
+
+.blue__colour__800 {
+  color: #1565c0;
+}
+
+.blue__colour__900 {
+  color: #0d47a1;
+}
+
+.green__background__50 {
+  background: #e8f5e9;
+}
+
+.green__background__100 {
+  background: #c8e6c9;
+}
+
+.green__background__200 {
+  background: #a5d6a7;
+}
+
+.green__background__300 {
+  background: #81c784;
+}
+
+.green__background__400 {
+  background: #66bb6a;
+}
+
+.green__background__500 {
+  background: #4caf50;
+}
+
+.green__background__600 {
+  background: #4caf50;
+}
+
+.green__background__700 {
+  background: #388e3c;
+}
+
+.green__background__800 {
+  background: #2e7d32;
+}
+
+.green__background__900 {
+  background: #1b5e20;
+}
+
+.green__colour__50 {
+  color: #e8f5e9;
+}
+
+.green__colour__100 {
+  color: #c8e6c9;
+}
+
+.green__colour__200 {
+  color: #a5d6a7;
+}
+
+.green__colour__300 {
+  color: #81c784;
+}
+
+.green__colour__400 {
+  color: #66bb6a;
+}
+
+.green__colour__500 {
+  color: #4caf50;
+}
+
+.green__colour__600 {
+  color: #4caf50;
+}
+
+.green__colour__700 {
+  color: #388e3c;
+}
+
+.green__colour__800 {
+  color: #2e7d32;
+}
+
+.green__colour__900 {
+  color: #1b5e20;
+}
+
+@-webkit-keyframes fadeInDown {
   from {
     transform: translate3d(0, -100%, 0);
     opacity: 0;

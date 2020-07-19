@@ -5,6 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
+/**
+ * App\page
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\page filter(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\page newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\page newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\page query()
+ * @mixin \Eloquent
+ */
 class page extends Model
 {
     /**

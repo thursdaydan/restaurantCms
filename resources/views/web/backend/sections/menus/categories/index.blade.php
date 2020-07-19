@@ -93,16 +93,21 @@
                         </div>
 
                         <div class="card-footer">
+                            <div class="col-12 col-md-3 float-left">
+                                <div class="pretty p-switch p-fill">
+                                    <input type="checkbox" id="with_archived" name="with_archived" value="1" {{ old('with_archived', request('with_archived')) ? 'checked' : null }} />
+                                    <div class="state p-primary">
+                                        <label>@lang('sections/menus.archived')</label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-12 col-md-3 float-right">
                                 <button type="submit" name="submit" class="btn btn-block btn-primary float-right">Filter Categories</button>
                             </div>
                         </div>
                     </div>
                 </form>
-
-                <svg class="icon" id="settings-icon">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#zondicon-cog"></use>
-                </svg>
 
                 <div class="card index-card">
                     <div class="card-header">
@@ -129,8 +134,11 @@
 
                             <tbody>
                                 @forelse ($menuCategories as $category)
-                                    <tr data-id="{{ $category->id }}" data-delete-url="{{ route('categories.destroy', $category->id) }}" data-section="{{ Str::singular(__('sections/categories.title')) }}">
-                                        <td>{{ $category->name }}</td>
+                                    <tr data-id="{{ $category->id }}" data-delete-url="{{ route('categories.destroy', $category->id) }}" data-restore-url="{{ route('categories.restore', $category->id) }}" data-section="{{ Str::singular(__('sections/categories.title')) }}">
+                                        <td>
+                                            {{ ! $category->trashed() ? svg('solid/circle', 'icon-sm text-transparent') : svg('solid/circle', 'icon-sm text-red') }}
+                                            {{ $category->name }}
+                                        </td>
                                         <td><span class="badge" style="color: {{ $category->status->text_colour }}; background: {{ $category->status->background_colour }}">{{ $category->status->name }}</span></td>
                                         <td>{{ $category->menu->name }}</td>
                                         <td>{{ $category->publish_at ? $category->publish_at->format('j F, Y') : null }}</td>
@@ -139,7 +147,12 @@
                                         <td>
                                             <div class="btn-group">
                                                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-primary btn-edit" title="Edit">@svg('regular/edit')</a>
-                                                <button type="button" class="btn btn-sm btn-danger btn-delete" title="Delete">@svg('regular/trash')</button>
+
+                                                @if (! $category->trashed())
+                                                    <button type="button" class="btn btn-sm btn-danger btn-delete" title="Delete">@svg('regular/trash')</button>
+                                                @else
+                                                    <button type="button" class="btn btn-sm btn-primary btn-restore" title="Restore">@svg('regular/trash-restore')</button>
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
@@ -160,6 +173,8 @@
                         </span>
                     </div>
                 </div>
+
+                @svg('solid/circle', ' icon-sm text-red') <b> = @lang('sections/categories.archived')</b>
             </div>
         </div>
     </div>

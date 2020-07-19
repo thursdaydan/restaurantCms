@@ -141,4 +141,16 @@ class MenuCategoryController extends Controller
     {
         return $category->delete();
     }
+
+    /**
+     * Restore the specified resource from storage.
+     *
+     * @param $id
+     * @return bool|null
+     * @throms \Exception
+     */
+    public function restore($id): ?bool
+    {
+        return MenuCategory::onlyTrashed()->find($id)->restore();
+    }
 }

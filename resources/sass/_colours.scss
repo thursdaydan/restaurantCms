@@ -1,0 +1,260 @@
+// Variables
+@import 'variables';
+
+.red {
+    &__background {
+        &__50 {
+            background: $red-50;
+        }
+
+        &__100 {
+            background: $red-100;
+        }
+
+        &__200 {
+            background: $red-200;
+        }
+
+        &__300 {
+            background: $red-300;
+        }
+
+        &__400 {
+            background: $red-400;
+        }
+
+        &__500 {
+            background: $red-500;
+        }
+
+        &__600 {
+            background: $red-600;
+        }
+
+        &__700 {
+            background: $red-700;
+        }
+
+        &__800 {
+            background: $red-800;
+        }
+
+        &__900 {
+            background: $red-900;
+        }
+    }
+
+    &__colour {
+        &__50 {
+            color: $red-50;
+        }
+
+        &__100 {
+            color: $red-100;
+        }
+
+        &__200 {
+            color: $red-200;
+        }
+
+        &__300 {
+            color: $red-300;
+        }
+
+        &__400 {
+            color: $red-400;
+        }
+
+        &__500 {
+            color: $red-500;
+        }
+
+        &__600 {
+            color: $red-600;
+        }
+
+        &__700 {
+            color: $red-700;
+        }
+
+        &__800 {
+            color: $red-800;
+        }
+
+        &__900 {
+            color: $red-900;
+        }
+    }
+}
+
+.blue {
+    &__background {
+        &__50 {
+            background: $blue-50;
+        }
+
+        &__100 {
+            background: $blue-100;
+        }
+
+        &__200 {
+            background: $blue-200;
+        }
+
+        &__300 {
+            background: $blue-300;
+        }
+
+        &__400 {
+            background: $blue-400;
+        }
+
+        &__500 {
+            background: $blue-500;
+        }
+
+        &__600 {
+            background: $blue-600;
+        }
+
+        &__700 {
+            background: $blue-700;
+        }
+
+        &__800 {
+            background: $blue-800;
+        }
+
+        &__900 {
+            background: $blue-900;
+        }
+    }
+
+    &__colour {
+        &__50 {
+            color: $blue-50;
+        }
+
+        &__100 {
+            color: $blue-100;
+        }
+
+        &__200 {
+            color: $blue-200;
+        }
+
+        &__300 {
+            color: $blue-300;
+        }
+
+        &__400 {
+            color: $blue-400;
+        }
+
+        &__500 {
+            color: $blue-500;
+        }
+
+        &__600 {
+            color: $blue-600;
+        }
+
+        &__700 {
+            color: $blue-700;
+        }
+
+        &__800 {
+            color: $blue-800;
+        }
+
+        &__900 {
+            color: $blue-900;
+        }
+    }
+}
+
+.green {
+    &__background {
+        &__50 {
+            background: $green-50;
+        }
+
+        &__100 {
+            background: $green-100;
+        }
+
+        &__200 {
+            background: $green-200;
+        }
+
+        &__300 {
+            background: $green-300;
+        }
+
+        &__400 {
+            background: $green-400;
+        }
+
+        &__500 {
+            background: $green-500;
+        }
+
+        &__600 {
+            background: $green-600;
+        }
+
+        &__700 {
+            background: $green-700;
+        }
+
+        &__800 {
+            background: $green-800;
+        }
+
+        &__900 {
+            background: $green-900;
+        }
+    }
+
+    &__colour {
+        &__50 {
+            color: $green-50;
+        }
+
+        &__100 {
+            color: $green-100;
+        }
+
+        &__200 {
+            color: $green-200;
+        }
+
+        &__300 {
+            color: $green-300;
+        }
+
+        &__400 {
+            color: $green-400;
+        }
+
+        &__500 {
+            color: $green-500;
+        }
+
+        &__600 {
+            color: $green-600;
+        }
+
+        &__700 {
+            color: $green-700;
+        }
+
+        &__800 {
+            color: $green-800;
+        }
+
+        &__900 {
+            color: $green-900;
+        }
+    }
+}

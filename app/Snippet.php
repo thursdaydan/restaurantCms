@@ -5,6 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
+/**
+ * App\Snippet
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Snippet filter(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Snippet newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Snippet newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Snippet query()
+ * @mixin \Eloquent
+ */
 class Snippet extends Model
 {
     /**
