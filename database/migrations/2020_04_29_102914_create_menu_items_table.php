@@ -21,7 +21,8 @@ class CreateMenuItemsTable extends Migration
             $table->integer('menu_id')->unsigned();
             $table->integer('category_id')->unsigned()->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
-            $table->decimal('price', 10, 4)->nullable();
+            $table->integer('cost')->nullable();
+            $table->integer('price')->nullable();
             $table->boolean('gluten_free');
             $table->boolean('vegetarian');
             $table->boolean('vegan');

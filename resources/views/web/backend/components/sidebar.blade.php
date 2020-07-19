@@ -30,13 +30,13 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('items.index') }}" class="nav-link {{ request()->is('menus/items*') ? 'active' : null }}">
                                 @svg('regular/circle', 'nav-icon') <p>Items</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('types.index') }}" class="nav-link {{ request()->is('menus/types*') ? 'active' : null }}">
                                 @svg('regular/circle', 'nav-icon') <p>Types</p>
                             </a>
                         </li>
