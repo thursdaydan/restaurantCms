@@ -22,8 +22,9 @@ class CreateMenusTable extends Migration
             $table->integer('order')->unsigned();
             $table->text('header_text')->nullable();
             $table->text('footer_text')->nullable();
-            $table->timestamp('publish_at')->nullable();
+            $table->text('notes')->nullable();
             $table->integer('author_id')->unsigned();
+            $table->timestamp('publish_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

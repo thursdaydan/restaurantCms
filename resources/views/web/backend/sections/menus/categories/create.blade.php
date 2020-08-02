@@ -3,9 +3,9 @@
 @section('title', __('sections/categories.title'))
 
 @section('breadcrumbs')
-<li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-<li class="breadcrumb-item"><a href="{{ route('categories.index') }}">@yield('title')</a></li>
-<li class="breadcrumb-item active">Add Category</li>
+    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">@yield('title')</a></li>
+    <li class="breadcrumb-item active">Add Category</li>
 @endsection
 
 @section('content')
@@ -32,8 +32,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="description">Description @required</label>
-                                <textarea class="form-control" id="description" name="description" rows="5" placeholder="Description" required>{{ old('description') }}</textarea>
+                                <label for="subtitle">Subtitle</label>
+                                <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ old('subtitle') }}" placeholder="Subtitle">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
                             </div>
                         </div>
 
@@ -76,6 +81,13 @@
                             <div class="form-group">
                                 <label for="publish_at">Publish At</label>
                                 <input type="date" class="form-control" id="publish_at" name="publish_at" value="{{ old('publish_at') }}" placeholder="Publish Date">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="notes">Notes</label>
+                                <textarea name="notes" id="notes" class="form-control" rows="5" placeholder="Notes">{{ old('notes') }}</textarea>
                             </div>
                         </div>
                     </div>

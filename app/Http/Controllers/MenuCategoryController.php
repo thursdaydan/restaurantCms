@@ -37,7 +37,8 @@ class MenuCategoryController extends Controller
         $users          = User::all('id', 'name');
         $menuCategories = MenuCategory::filter($request)->paginate();
 
-        return view('web.backend.sections.menus.categories.index')->with(compact('statuses', 'menus', 'users', 'menuCategories'));
+        return view('web.backend.sections.menus.categories.index')->with(compact('statuses', 'menus', 'users',
+            'menuCategories'));
     }
 
     /**
@@ -63,7 +64,7 @@ class MenuCategoryController extends Controller
     {
         $request->validate([
             'name'        => 'required|string',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'status_id'   => 'required|integer',
             'menu_id'     => 'required|integer',
             'publish_at'  => 'nullable|string',
@@ -71,9 +72,11 @@ class MenuCategoryController extends Controller
 
         MenuCategory::create([
             'name'        => $request->name,
+            'subtitle'    => $request->subtitle,
             'description' => $request->description,
             'status_id'   => $request->status_id,
             'menu_id'     => $request->menu_id,
+            'notes'       => $request->notes,
             'publish_at'  => $request->publish_at,
             'author_id'   => auth()->user()->id,
         ]);
@@ -106,11 +109,11 @@ class MenuCategoryController extends Controller
      *
      * @return RedirectResponse
      */
-    public function update(Request $request, MenuCategory $category)
+    public function update(Request $request, MenuCategory $category): RedirectResponse
     {
         $request->validate([
             'name'        => 'required|string',
-            'description' => 'string',
+            'description' => 'nullable|string',
             'status_id'   => 'required|integer',
             'menu_id'     => 'required|integer',
             'publish_at'  => 'nullable|string',
@@ -118,9 +121,11 @@ class MenuCategoryController extends Controller
 
         $category->update([
             'name'        => $request->name,
+            'subtitle'    => $request->subtitle,
             'description' => $request->description,
             'status_id'   => $request->status_id,
             'menu_id'     => $request->menu_id,
+            'notes'       => $request->notes,
             'publish_at'  => $request->publish_at,
         ]);
 
@@ -146,6 +151,7 @@ class MenuCategoryController extends Controller
      * Restore the specified resource from storage.
      *
      * @param $id
+     *
      * @return bool|null
      * @throms \Exception
      */

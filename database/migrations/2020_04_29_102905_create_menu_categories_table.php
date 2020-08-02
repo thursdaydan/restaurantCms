@@ -16,10 +16,12 @@ class CreateMenuCategoriesTable extends Migration
         Schema::create('menu_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
             $table->integer('status_id')->unsigned();
             $table->integer('menu_id')->unsigned();
             $table->integer('order')->unsigned();
+            $table->text('notes')->nullable();
             $table->integer('author_id')->unsigned();
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();

@@ -27,6 +27,7 @@ class CreateMenuItemsTable extends Migration
             $table->boolean('vegetarian');
             $table->boolean('vegan');
             $table->integer('order')->unsigned();
+            $table->text('notes')->nullable();
             $table->integer('author_id')->unsigned();
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();

@@ -5,12 +5,14 @@ return [
     'sub_title' => 'Menu Items List',
     'archived'  => 'Archived',
     'empty'     => 'No Menu Items Found.',
+    'required'  => 'required',
     'actions'   => [
         'create'  => 'Add Menu Item',
-        'edit'    => 'Edit',
+        'edit'    => 'Edit Menu Item',
         'show'    => 'Show',
         'delete'  => 'Delete',
         'restore' => 'Restore',
+        'save'    => 'Save',
     ],
     'fields'    => [
         'name'            => 'Name',
@@ -19,6 +21,7 @@ return [
         'menu'            => 'Menu',
         'category'        => 'Category',
         'parent'          => 'Parent',
+        'order'           => 'Order',
         'cost'            => 'Cost',
         'price'           => 'Price',
         'dietary_options' => 'Dietary Options',
@@ -37,5 +40,9 @@ return [
         'title'  => 'Filter',
         'action' => 'Filter Menu Items',
         'clear'  => 'Clear Filter',
+    ],
+    'headings'  => [
+        'basic_details' => 'Basic Details',
+        'pricing'       => 'Pricing &amp; Dietary Details',
     ],
 ];

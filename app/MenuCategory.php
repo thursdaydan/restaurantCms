@@ -84,6 +84,11 @@ class MenuCategory extends Model implements Sortable
         return $this->belongsTo(Menu::class);
     }
 
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(MenuItem::class, 'category_id', 'id')->ordered();
+    }
+
     public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);

@@ -51,7 +51,7 @@ events.on('click', '.btn-delete', function (event) {
                     setTimeout(() => { fadeOut(row); }, 500);
 
                     const indexTable = document.querySelector('.index-table');
-                    const itemsCount = indexTable.querySelectorAll('tbody > tr').length - 1;
+                    const itemsCount = document.querySelector('.itemsCount').textContent - 1;
                     const itemsVerb = itemsCount === 1 ? 'menu' : 'menus';
 
                     document.querySelector('.itemsCount').innerHTML = itemsCount;

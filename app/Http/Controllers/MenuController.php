@@ -67,6 +67,7 @@ class MenuController extends Controller
             'type_id' => 'required|integer',
             'header_text' => 'nullable|string',
             'footer_text' => 'nullable|string',
+            'notes' => 'nullable|string',
             'publish_at' => 'nullable|string'
         ]);
 
@@ -77,6 +78,7 @@ class MenuController extends Controller
             'type_id' => $request->type_id,
             'header_text' => $request->header_text,
             'footer_text' => $request->footer_text,
+            'notes' => $request->notes,
             'publish_at' => $request->publish_at,
             'author_id' => auth()->user()->id
         ]);
@@ -94,8 +96,9 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        return view('web.backend.sections.menus.show')
-            ->with('menu', $menu);
+        $menu->load('categories.items');
+
+        return view('web.backend.sections.menus.show')->with('menu', $menu);
     }
 
     /**
@@ -130,6 +133,7 @@ class MenuController extends Controller
             'order' => 'required|integer',
             'header_text' => 'nullable|string',
             'footer_text' => 'nullable|string',
+            'notes' => 'nullable|string',
             'publish_at' => 'nullable|string'
         ]);
 
@@ -141,6 +145,7 @@ class MenuController extends Controller
             'order' => $request->order,
             'header_text' => $request->header_text,
             'footer_text' => $request->footer_text,
+            'notes' => $request->notes,
             'publish_at' => $request->publish_at
         ]);
 

@@ -33383,3 +33383,63 @@ body {
   color: #e3342f;
 }
 
+.tree {
+  margin: 0 0 0 20px;
+  list-style: none;
+  line-height: 2em;
+}
+
+.tree li {
+  font-size: 16px;
+  position: relative;
+  font-family: monospace;
+}
+
+.tree li:before {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  content: "";
+  display: block;
+  border-left: 1px solid #ddd;
+  height: 1em;
+  border-bottom: 1px solid #ddd;
+  width: 10px;
+}
+
+.tree li:after {
+  position: absolute;
+  left: -15px;
+  bottom: -7px;
+  content: "";
+  display: block;
+  border-left: 1px solid #ddd;
+  height: 100%;
+}
+
+.tree li.root {
+  margin: 0 0 0 -20px;
+  font-weight: bold;
+}
+
+.tree li.root:before {
+  display: none;
+}
+
+.tree li.root:after {
+  display: none;
+}
+
+.tree li.folder {
+  font-weight: bold;
+}
+
+.tree li.file {
+  font-weight: initial;
+  font-style: italic;
+}
+
+.tree li:last-child:after {
+  display: none;
+}
+

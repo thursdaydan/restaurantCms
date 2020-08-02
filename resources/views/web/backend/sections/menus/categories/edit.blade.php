@@ -33,8 +33,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description">Description @required</label>
-                                    <textarea class="form-control" id="description" name="description" rows="5" placeholder="Description" required>{{ old('description', $category->description) }}</textarea>
+                                    <label for="subtitle">Subtitle</label>
+                                    <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ old('subtitle', $category->subtitle) }}" placeholder="Subtitle">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="5" placeholder="Description">{{ old('description', $category->description) }}</textarea>
                                 </div>
                             </div>
 
@@ -77,6 +82,13 @@
                                 <div class="form-group">
                                     <label for="publish_at">Publish At</label>
                                     <input type="date" class="form-control" id="publish_at" name="publish_at" value="{{ old('publish_at', $category->publish_at) }}" placeholder="Publish Date">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="notes">Notes</label>
+                                    <textarea name="notes" id="notes" class="form-control" rows="5" placeholder="Notes">{{ old('notes', $category->notes) }}</textarea>
                                 </div>
                             </div>
                         </div>

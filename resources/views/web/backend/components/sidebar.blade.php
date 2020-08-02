@@ -10,6 +10,10 @@
                     <a href="{{ route('home') }}" class="nav-link {{ request()->is('home') ? 'active' : null }}">@svg('solid/tachometer-alt', 'nav-icon') <p>Home</p></a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('home') }}" class="nav-link {{ request()->is('pages') ? 'active' : null }}">@svg('solid/browser'exit, 'nav-icon') <p>Pages</p></a>
+                </li>
+
                 <li class="nav-item has-treeview {{ request()->is('menus*') ? 'menu-open' : null }}">
                     <a href="{{ route('menus.index') }}" class="nav-link {{ request()->is('menus*') ? 'active' : null }}">
                         @svg('solid/utensils', 'nav-icon')

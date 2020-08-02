@@ -132,7 +132,7 @@
       <server host="restaurantcms.localhost" id="fc56f541-3f3d-40b6-8811-c5360a65d0dc" name="Localhost" port="9000" use_path_mappings="true" />
     </servers>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
   <component name="PhpRuntimeConfiguration">
     <extensions>
       <extension name="Ev" enabled="false" />

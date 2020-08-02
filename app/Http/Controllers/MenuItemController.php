@@ -79,6 +79,7 @@ class MenuItemController extends Controller
             'gluten_free' => 'nullable|boolean',
             'vegetarian'  => 'nullable|boolean',
             'vegan'       => 'nullable|boolean',
+            'notes'       => 'nullable|string',
             'publish_at'  => 'nullable|string',
         ]);
 
@@ -94,6 +95,7 @@ class MenuItemController extends Controller
             'gluten_free' => $request->has('gluten_free'),
             'vegetarian'  => $request->has('vegetarian'),
             'vegan'       => $request->has('vegan'),
+            'notes'       => $request->notes,
             'publish_at'  => $request->publish_at,
             'author_id'   => auth()->user()->id,
         ]);
@@ -117,7 +119,8 @@ class MenuItemController extends Controller
         $items      = MenuItem::all('id', 'name');
         $statuses   = MenuStatus::all('id', 'name');
 
-        return view('web.backend.sections.menus.items.edit')->with(compact('menus', 'categories', 'items', 'statuses', 'item'));
+        return view('web.backend.sections.menus.items.edit')->with(compact('menus', 'categories', 'items', 'statuses',
+            'item'));
     }
 
     /**
@@ -142,6 +145,7 @@ class MenuItemController extends Controller
             'gluten_free' => 'nullable|boolean',
             'vegetarian'  => 'nullable|boolean',
             'vegan'       => 'nullable|boolean',
+            'notes'       => 'nullable|string',
             'publish_at'  => 'nullable|string',
         ]);
 
@@ -157,6 +161,7 @@ class MenuItemController extends Controller
             'gluten_free' => $request->has('gluten_free'),
             'vegetarian'  => $request->has('vegetarian'),
             'vegan'       => $request->has('vegan'),
+            'notes'       => $request->notes,
             'publish_at'  => $request->publish_at,
         ]);
 
@@ -182,6 +187,7 @@ class MenuItemController extends Controller
      * Restore the specified resource from storage.
      *
      * @param $id
+     *
      * @return bool|null
      * @throms \Exception
      */
