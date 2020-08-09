@@ -11,7 +11,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link {{ request()->is('pages') ? 'active' : null }}">@svg('solid/browser'exit, 'nav-icon') <p>Pages</p></a>
+                    <a href="{{ route('pages.index') }}" class="nav-link {{ request()->is('pages') ? 'active' : null }}">@svg('solid/browser', 'nav-icon') <p>Pages</p></a>
                 </li>
 
                 <li class="nav-item has-treeview {{ request()->is('menus*') ? 'menu-open' : null }}">
