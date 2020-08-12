@@ -7,7 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+        {{ config('app.name', 'Laravel') }}
+        {{ config('app.env') !== 'production' ? ' - ' . ucfirst(config('app.env')) : null }}
+    </title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,7 +21,7 @@
 </head>
 <body>
     <div id="app" class="wrapper">
-        <nav class="main-header navbar navbar-expand navbar-dark navbar-lightblue text-sm">
+        <nav class="main-header navbar navbar-expand navbar-dark {{ $skin ?? 'navbar-primary' }} text-sm">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#">@svg('solid/bars')</a>
