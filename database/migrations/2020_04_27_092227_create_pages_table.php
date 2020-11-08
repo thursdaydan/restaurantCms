@@ -10,22 +10,22 @@ class CreatePagesTable extends Migration
      *
      * @return void
      */
-//    public function up()
-//    {
-//        Schema::create('pages', static function (Blueprint $table) {
-//            $table->id();
-//            $table->string('');
-//            $table->timestamps();
-//        });
-//    }
+   public function up(): void
+   {
+       Schema::create('pages', static function (Blueprint $table) {
+           $table->id();
+           $table->string('');
+           $table->timestamps();
+       });
+   }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-//    public function down()
-//    {
-//        Schema::drop('pages');
-//    }
+   public function down(): void
+   {
+       Schema::drop('pages');
+   }
 }

@@ -87,6 +87,16 @@ class Menu extends Model implements Sortable
         return $this->belongsTo(MenuType::class);
     }
 
+    public function layout(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(MenuLayout::class);
+    }
+
+    public function currency(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Currency::class);
+    }
+
     public function categories(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(MenuCategory::class)->ordered();
