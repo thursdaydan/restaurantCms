@@ -13,7 +13,7 @@
                 <ul>
                     @foreach($category->items as $item)
                         <li class="file">
-                            {{ $item->name }}
+                            {{ $item->name }} - {{ $menu->currency->symbol }}{{ $item->price }}
 
                             <a href="{{ route('items.edit', $item->id) }}" target="_blank">
                                 {{ svg('regular/external-link-square') }}

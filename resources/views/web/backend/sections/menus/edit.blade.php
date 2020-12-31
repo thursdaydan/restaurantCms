@@ -62,6 +62,54 @@
                                 <label for="order">@lang('sections/menus.fields.order') @required</label>
                                 <input type="number" min="0"class="form-control" id="order" name="order" value="{{ old('order', $menu->order) }}" placeholder="Order" required>
                             </div>
+
+                            <div class="form-group">
+                                <label for="currency_id">@lang('sections/menus.fields.currency') @required</label>
+                                <select class="form-control" id="currency_id" name="currency_id" required>
+                                    <option value="">Please select a Currency</option>
+                                    @foreach($currencies as $currency)
+                                        <option value="{{ $currency->id }}" {{ old('currency_id', $menu->currency_id) === $currency->id ? 'selected' : null }}>{{ $currency->symbol }} - {{ $currency->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <label for="type_id">@lang('sections/menus.fields.layout') @required</label>
+                            <input type="hidden" name="menu_layout_id" value="{{ old('menu_layout_id', $menu->menu_layout_id) }}" />
+
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="info-box {{ old('menu_layout_id', $menu->menu_layout_id) == '1' ? 'bg-blue' : 'bg_light' }} menu-layout-box" data-layout-id="1">
+                                        <span class="info-box-icon">@svg('layouts/1-column-layout', ['class' => 'layout-icon'])</span>
+
+                                        <div class="info-box-content">
+                                            <span class="info-box-number">Single column layout</span>
+                                            <span class="progress-description text-muted">Best used for smaller menus</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-12">
+                                    <div class="info-box {{ old('menu_layout_id', $menu->menu_layout_id) == '2' ? 'bg-blue' : 'bg_light' }} menu-layout-box" data-layout-id="2">
+                                        <span class="info-box-icon">@svg('layouts/2-column-layout', ['class' => 'layout-icon'])</span>
+
+                                        <div class="info-box-content">
+                                            <span class="info-box-number">2-column layout</span>
+                                            <span class="progress-description text-muted">Ideal for small-medium menus</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-12">
+                                    <div class="info-box {{ old('menu_layout_id', $menu->menu_layout_id) == '3' ? 'bg-blue' : 'bg_light' }} menu-layout-box" data-layout-id="3">
+                                        <span class="info-box-icon">@svg('layouts/3-column-layout', ['class' => 'layout-icon'])</span>
+
+                                        <div class="info-box-content">
+                                            <span class="info-box-number">multi-column layout</span>
+                                            <span class="progress-description text-muted">Ideal for medium-large menus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,11 +138,9 @@
                                 <input type="text" id="date-picker" class="form-control date-picker" name="publish_at" value="{{ old('publish_at', $menu->publish_at) }}" placeholder="Publish Date" />
                             </div>
 
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="notes">Notes</label>
-                                    <textarea name="notes" id="notes" class="form-control" rows="5" placeholder="Notes">{{ old('notes', $menu->notes) }}</textarea>
-                                </div>
+                            <div class="form-group">
+                                <label for="notes">@lang('sections/menus.fields.notes') <small>@lang('sections/menus.fields.internal_only')</small></label>
+                                <textarea name="notes" id="notes" class="form-control" rows="5" placeholder="Notes">{{ old('notes', $menu->notes) }}</textarea>
                             </div>
                         </div>
                     </div>

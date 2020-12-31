@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 /*!
  *   AdminLTE v3.0.2
  *   Author: Colorlib
@@ -30009,8 +30009,7 @@ a.text-muted:hover {
 
 [class*="accent-"] a.btn-dark {
   color: #ffffff;
-}
-/*# sourceMappingURL=adminlte.css.map *//* Material Colours
+}/* Material Colours
    https://www.materialpalette.com/colors */
 
 /* Material Colours

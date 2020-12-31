@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-lightblue elevation-4">
+<aside class="main-sidebar sidebar-dark-red elevation-4">
     <a href="{{ url('/') }}" class="brand-link">
         <span class="brand-text font-weight-light">{{ config('app.name', 'Laravel') }}</span>
         {{ config('app.env') !== 'production' ? ' - ' . ucfirst(config('app.env')) : null }}
