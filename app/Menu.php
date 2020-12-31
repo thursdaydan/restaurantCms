@@ -94,7 +94,7 @@ class Menu extends Model implements Sortable
 
     public function currency(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne(Currency::class);
+        return $this->hasOne(Currency::class, 'id', 'currency_id');
     }
 
     public function categories(): \Illuminate\Database\Eloquent\Relations\HasMany

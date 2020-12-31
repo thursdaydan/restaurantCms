@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Currency;
 use App\Menu;
+use App\MenuLayout;
 use App\MenuStatus;
 use App\MenuType;
 use App\User;
@@ -46,10 +48,12 @@ class MenuController extends Controller
     {
         $statuses = MenuStatus::all('id', 'name');
         $types = MenuType::all('id', 'name');
+        $currencies = Currency::all('id', 'name', 'symbol');
+        $layouts = MenuLayout::all('id', 'name');
         $defaultOrder = Menu::count() + 1;
 
          return view('web.backend.sections.menus.create')
-             ->with(compact('statuses', 'types', 'defaultOrder'));
+             ->with(compact('statuses', 'types', 'currencies', 'layouts', 'defaultOrder'));
     }
 
     /**
@@ -61,26 +65,30 @@ class MenuController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => 'required|string',
-            'description' => 'string',
-            'status_id' => 'required|integer',
-            'type_id' => 'required|integer',
-            'header_text' => 'nullable|string',
-            'footer_text' => 'nullable|string',
-            'notes' => 'nullable|string',
-            'publish_at' => 'nullable|string'
+            'name'           => 'required|string',
+            'description'    => 'string',
+            'status_id'      => 'required|integer',
+            'type_id'        => 'required|integer',
+            'menu_layout_id' => 'require|integer',
+            'currency_id'    => 'required|integer',
+            'header_text'    => 'nullable|string',
+            'footer_text'    => 'nullable|string',
+            'notes'          => 'nullable|string',
+            'publish_at'     => 'nullable|string'
         ]);
 
         Menu::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status_id' => $request->status_id,
-            'type_id' => $request->type_id,
-            'header_text' => $request->header_text,
-            'footer_text' => $request->footer_text,
-            'notes' => $request->notes,
-            'publish_at' => $request->publish_at,
-            'author_id' => auth()->user()->id
+            'name'           => $request->name,
+            'description'    => $request->description,
+            'status_id'      => $request->status_id,
+            'type_id'        => $request->type_id,
+            'menu_layout_id' => $request->menu_layout_id,
+            'currency_id'    => $request->currency_id,
+            'header_text'    => $request->header_text,
+            'footer_text'    => $request->footer_text,
+            'notes'          => $request->notes,
+            'publish_at'     => $request->publish_at,
+            'author_id'      => auth()->user()->id,
         ]);
 
         flash('The new Menu was created successfully.')->success();
@@ -111,9 +119,11 @@ class MenuController extends Controller
     {
         $statuses = MenuStatus::all('id', 'name');
         $types = MenuType::all('id', 'name');
+        $currencies = Currency::all('id', 'name', 'symbol');
+        $layouts = MenuLayout::all('id', 'name');
 
         return view('web.backend.sections.menus.edit')
-            ->with(compact('menu', 'statuses', 'types'));
+            ->with(compact('menu', 'statuses', 'types', 'currencies', 'layouts'));
     }
 
     /**
@@ -123,30 +133,33 @@ class MenuController extends Controller
      * @param  Menu  $menu
      * @return RedirectResponse
      */
-    public function update(Request $request, Menu $menu)
+    public function update(Request $request, Menu $menu): RedirectResponse
     {
         $request->validate([
-            'name' => 'required|string',
-            'description' => 'string',
-            'status_id' => 'required|integer',
-            'type_id' => 'required|integer',
-            'order' => 'required|integer',
-            'header_text' => 'nullable|string',
-            'footer_text' => 'nullable|string',
-            'notes' => 'nullable|string',
-            'publish_at' => 'nullable|string'
+            'name'           => 'required|string',
+            'description'    => 'string',
+            'status_id'      => 'required|integer',
+            'type_id'        => 'required|integer',
+            'menu_layout_id' => 'required|integer',
+            'currency_id'    => 'required|integer',
+            'order'          => 'required|integer',
+            'header_text'    => 'nullable|string',
+            'footer_text'    => 'nullable|string',
+            'notes'          => 'nullable|string',
+            'publish_at'     => 'nullable|string',
         ]);
 
         $menu->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status_id' => $request->status_id,
-            'type_id' => $request->type_id,
-            'order' => $request->order,
-            'header_text' => $request->header_text,
-            'footer_text' => $request->footer_text,
-            'notes' => $request->notes,
-            'publish_at' => $request->publish_at
+            'name'           => $request->name,
+            'description'    => $request->description,
+            'status_id'      => $request->status_id,
+            'type_id'        => $request->type_id,
+            'menu_layout_id' => $request->menu_layout_id,
+            'currency_id'    => $request->currency_id,
+            'header_text'    => $request->header_text,
+            'footer_text'    => $request->footer_text,
+            'notes'          => $request->notes,
+            'publish_at'     => $request->publish_at,
         ]);
 
         flash('The Menu was updated successfully.')->success();
